@@ -74,8 +74,9 @@ def Har_jump():
         answer += [{'x':t, 'y':y}]
     answer += [{'x':360, 'y':0.4}]
     findMax = []
+    for i in range(0, 90): findMax += [0]
     for i in range(0, 360):
-        findMax += [32*pi**3*sin(2*i/180*pi)]
+        findMax += [-32*pi**3*sin(2*i/180*pi)]
     return answer, 1, findMax
 
 def Cy_H():

@@ -35,3 +35,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.Cycloidal.velocity.setAngle(value)
         self.Cycloidal.acceleration.setAngle(value)
         self.Cycloidal.jump.setAngle(value)
+    
+    @pyqtSlot()
+    def on_MU_clicked(self):
+        self.Harmonic.unitChange(True)
+        self.Cycloidal.unitChange(True)
+    
+    @pyqtSlot()
+    def on_IU_clicked(self):
+        self.Harmonic.unitChange(False)
+        self.Cycloidal.unitChange(False)

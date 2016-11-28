@@ -12,23 +12,19 @@ class chart(QWidget):
         self.color = Qt.black
         self.rate = 1
         self.maxima = [0]
+        self.unit = 'cm'
     
     def setAngle(self, thita):
         self.thita = thita
         self.update()
-    def setPath(self, path):
-        self.path = path
+    def setUnit(self, unit):
+        self.unit = unit
         self.update()
-    def setColor(self, color):
-        self.color = color
-        self.update()
-    def setRate(self, rate):
-        self.rate = rate
-        self.update()
-    def setMaxima(self, findMax):
-        self.maxima = findMax
-    def setFormula(self, formula):
-        self.setToolTip(formula)
+    def setMaxima(self, findMax): self.maxima = findMax
+    def setFormula(self, formula): self.setToolTip(formula)
+    def setPath(self, path): self.path = path
+    def setColor(self, color): self.color = color
+    def setRate(self, rate): self.rate = rate
     
     def findMax(self):
         maxima = max(self.maxima)
@@ -68,4 +64,6 @@ class chart(QWidget):
             painter.setPen(pen)
             pos = self.width()*(nowMax.index(maxima)+90)/360
             painter.drawLine(QPointF(pos, self.height()*2), QPointF(pos, self.height()*2*(-1)))
-            painter.drawText(QPointF(pos, -self.height()/2+25), str(maxima)[0:8])
+            if 'cm' in self.unit: text = str(maxima)[0:8]+' '+self.unit
+            else: text = str(maxima/25)[0:8]+' '+self.unit
+            painter.drawText(QPointF(pos, -self.height()/2+25), text)
