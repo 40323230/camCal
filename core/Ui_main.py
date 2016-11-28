@@ -128,12 +128,12 @@ class Ui_MainWindow(object):
         self.groupBox_9.setTitle(_translate("MainWindow", "ΔR"))
         self.groupBox_10.setTitle(_translate("MainWindow", "velocity"))
         self.groupBox_11.setTitle(_translate("MainWindow", "acceleration"))
-        self.groupBox_12.setTitle(_translate("MainWindow", "jump"))
+        self.groupBox_12.setTitle(_translate("MainWindow", "jerk"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("MainWindow", "Harmonic Motion"))
         self.groupBox_17.setTitle(_translate("MainWindow", "ΔR"))
         self.groupBox_18.setTitle(_translate("MainWindow", "velocity"))
         self.groupBox_19.setTitle(_translate("MainWindow", "acceleration"))
-        self.groupBox_20.setTitle(_translate("MainWindow", "jump"))
+        self.groupBox_20.setTitle(_translate("MainWindow", "jerk"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("MainWindow", "Cycloidal motion"))
 
 
