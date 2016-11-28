@@ -7,7 +7,7 @@ from sys import exit, argv
 from PyQt5.QtWidgets import QApplication
 from core.main import MainWindow
 
-#Start Pyslvs
+#Start CamCal
 if __name__=="__main__":
     QApplication.setStyle("fusion")
     app = QApplication(argv)

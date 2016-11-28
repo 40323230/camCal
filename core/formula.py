@@ -91,8 +91,8 @@ def Cy_H():
         y = (-(H/(2*pi))*sin(2*pi*t/T)+(H*t/T))-4*H
         answer += [{'x':t, 'y':y}]
     findMax = []
-    for i in range(0, 360):
-        findMax += [-(H/(2*pi))*sin(2*pi*t/T)+(H*t/T)]
+    for i in range(0, 91):
+        findMax += [-(H/(2*pi))*sin(4*i/180*pi)+(H*i/90)]
     return answer, 60, findMax
 
 def Cy_velocity():
@@ -107,7 +107,10 @@ def Cy_velocity():
     for t in range(270, 360):
         y = (H-H*cos(2*pi*t/T))
         answer += [{'x':t, 'y':y}]
-    return answer, 120
+    findMax = []
+    for i in range(0, 91):
+        findMax += [4*(1-cos(4*i/180*pi))*H]
+    return answer, 120, findMax
 
 def Cy_acceleration():
     answer = []
@@ -121,7 +124,10 @@ def Cy_acceleration():
     for t in range(270, 360):
         y = (H*pi*2*sin(2*pi*t/T))
         answer += [{'x':t, 'y':y}]
-    return answer, 350
+    findMax = []
+    for i in range(0, 360):
+        findMax += [8*pi**2*sin(4*i/180*pi)]
+    return answer, 350, findMax
 
 def Cy_jump():
     answer = []
@@ -135,4 +141,7 @@ def Cy_jump():
     for t in range(270, 360):
         y = (H*pi**2*4*cos(2*pi*t/T))
         answer += [{'x':t, 'y':y}]
-    return answer, 2200
+    findMax = []
+    for i in range(0, 360):
+        findMax += [256*pi**2*cos(4*i/180*pi)*H]
+    return answer, 2200, findMax
