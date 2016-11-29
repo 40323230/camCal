@@ -37,7 +37,7 @@ def Har_velocity():
         answer += [{'x':t, 'y':y}]
     findMax = []
     for i in range(0, 360):
-        findMax += [2*pi*sin(2*i/180*pi)]
+        findMax += [2*pi*sin(2*i/180*pi)*H]
     return answer, 1, findMax
 
 def Har_acceleration():
@@ -54,7 +54,7 @@ def Har_acceleration():
         answer += [{'x':t, 'y':y}]
     findMax = []
     for i in range(0, 360):
-        findMax += [8*pi**2*cos(2*i/180*pi)]
+        findMax += [8*pi**2*cos(2*i/180*pi)*H]
     return answer, 1/30, findMax
 
 def Har_jump():
@@ -76,7 +76,7 @@ def Har_jump():
     findMax = []
     for i in range(0, 90): findMax += [0]
     for i in range(0, 360):
-        findMax += [-32*pi**3*sin(2*i/180*pi)]
+        findMax += [-32*pi**3*sin(2*i/180*pi)*H]
     return answer, 1, findMax
 
 def Cy_H():
@@ -127,7 +127,7 @@ def Cy_acceleration():
         answer += [{'x':t, 'y':y}]
     findMax = []
     for i in range(0, 360):
-        findMax += [8*pi**2*sin(4*i/180*pi)]
+        findMax += [8*pi**2*sin(4*i/180*pi)*H]
     return answer, 350, findMax
 
 def Cy_jump():
