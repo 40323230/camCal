@@ -86,7 +86,7 @@
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_17">
              <item>
-              <layout class="QVBoxLayout" name="Har_H"/>
+              <layout class="QVBoxLayout" name="Har_R"/>
              </item>
             </layout>
            </widget>
@@ -170,7 +170,7 @@
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_24">
              <item>
-              <layout class="QVBoxLayout" name="Cy_H"/>
+              <layout class="QVBoxLayout" name="Cy_R"/>
              </item>
             </layout>
            </widget>

@@ -6,7 +6,7 @@ from PyQt5.QtGui import *
 H = 25
 T = 90
 
-def Har_H():
+def Har_R():
     answer = []
     for t in range(0, 90):
         answer += [{'x':t, 'y':0}]
@@ -79,7 +79,7 @@ def Har_jump():
         findMax += [-32*pi**3*sin(2*i/180*pi)*H]
     return answer, 1, findMax
 
-def Cy_H():
+def Cy_R():
     answer = []
     for t in range(0, 90):
         answer += [{'x':t, 'y':0}]

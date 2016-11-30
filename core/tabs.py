@@ -8,15 +8,15 @@ from .formula import *
 
 class Harmonic():
     def __init__(self):
-        #H
-        self.H = chart()
-        path, rate, findMax = Har_H()
-        self.H.setPath(path)
-        self.H.setRate(rate)
-        self.H.setColor(Qt.blue)
-        self.H.setMaxima(findMax)
-        self.H.setUnit('cm')
-        self.H.setFormula("ΔR = (H/2)*[1-cos(π*t/T)]\nΔR = (H/2)*[1-cos(π*φ/β)]")
+        #deltaR
+        self.R = chart()
+        path, rate, findMax = Har_R()
+        self.R.setPath(path)
+        self.R.setRate(rate)
+        self.R.setColor(Qt.blue)
+        self.R.setMaxima(findMax)
+        self.R.setUnit('cm')
+        self.R.setFormula("ΔR = (H/2)*[1-cos(π*t/T)]\nΔR = (H/2)*[1-cos(π*φ/β)]")
         #velocity
         self.velocity = chart()
         path, rate, findMax = Har_velocity()
@@ -47,27 +47,27 @@ class Harmonic():
         
     def unitChange(self, MU):
         if MU:
-            self.H.setUnit('cm')
+            self.R.setUnit('cm')
             self.velocity.setUnit('cm/s')
             self.acceleration.setUnit('cm/s²')
             self.jump.setUnit('cm/s³')
         else:
-            self.H.setUnit('in')
+            self.R.setUnit('in')
             self.velocity.setUnit('in/s')
             self.acceleration.setUnit('in/s²')
             self.jump.setUnit('in/s³')
 
 class Cycloidal():
     def __init__(self):
-        #H
-        self.H = chart()
-        path, rate, findMax = Cy_H()
-        self.H.setPath(path)
-        self.H.setRate(rate)
-        self.H.setColor(Qt.blue)
-        self.H.setMaxima(findMax)
-        self.H.setUnit('cm')
-        self.H.setFormula("ΔR = (H*t/T)-(H/2*π)*sin(2*π*t/T)\nΔR = (H*φ/β)-(H/2*π)*sin(2*π*φ/β)")
+        #deltaR
+        self.R = chart()
+        path, rate, findMax = Cy_R()
+        self.R.setPath(path)
+        self.R.setRate(rate)
+        self.R.setColor(Qt.blue)
+        self.R.setMaxima(findMax)
+        self.R.setUnit('cm')
+        self.R.setFormula("ΔR = (H*t/T)-(H/2*π)*sin(2*π*t/T)\nΔR = (H*φ/β)-(H/2*π)*sin(2*π*φ/β)")
         #velocity
         self.velocity = chart()
         path, rate, findMax = Cy_velocity()
@@ -98,12 +98,12 @@ class Cycloidal():
     
     def unitChange(self, MU):
         if MU:
-            self.H.setUnit('cm')
+            self.R.setUnit('cm')
             self.velocity.setUnit('cm/s')
             self.acceleration.setUnit('cm/s²')
             self.jump.setUnit('cm/s³')
         else:
-            self.H.setUnit('in')
+            self.R.setUnit('in')
             self.velocity.setUnit('in/s')
             self.acceleration.setUnit('in/s²')
             self.jump.setUnit('in/s³')
